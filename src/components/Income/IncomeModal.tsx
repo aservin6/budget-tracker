@@ -29,15 +29,13 @@ export default function IncomeModal() {
           <CloseModalButton />
         </div>
         <form onSubmit={handleFormSubmit} className="flex flex-col space-y-3">
-          <div className="flex w-full bg-zinc-700 text-2xl">
-            <span className="select-none rounded-l-lg bg-zinc-700 px-3 py-2">
-              $
-            </span>
+          <div className="flex w-full rounded-lg bg-zinc-700 text-2xl">
+            <span className="select-none bg-zinc-700 px-3 py-2">$</span>
             <input
               onChange={handleChange}
               type="number"
               step={0.01}
-              className="w-full rounded-r-lg bg-zinc-700 py-2 pr-3  outline-none"
+              className="w-full bg-zinc-700 py-2 pr-3  outline-none"
               placeholder={"4250"}
               defaultValue={undefined}
             />

@@ -28,8 +28,8 @@ export default function Income() {
           </div>
         </>
       ) : (
-        <div className="flex items-center justify-between">
-          <p>Add your monthly income to calculate your budget!</p>
+        <div className="flex items-center justify-between space-x-2">
+          <p className="">Add your monthly income to calculate your budget!</p>
           <AdjustIncomeButton />
         </div>
       )}

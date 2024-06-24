@@ -14,13 +14,13 @@ export default function App() {
   return (
     <>
       <main className="min-h-screen bg-zinc-200 font-figtree font-semibold text-zinc-800">
-        <div className="mx-auto w-5/6 max-w-2xl py-4 lg:w-2/3">
+        <div className="mx-auto w-5/6 max-w-2xl py-6 lg:w-2/3">
           <header className="mb-6 w-full text-3xl font-black tracking-normal">
             Budget Tracker
           </header>
           {/* Dashboard Section */}
           <section id="dashboard">
-            <h2 className="mb-2 text-2xl">Dashboard</h2>
+            <h2 className="mb-2 text-xl">Dashboard</h2>
             <div className="space-y-2 text-lg">
               <Income />
               <ExpenseList />

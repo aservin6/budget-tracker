@@ -18,7 +18,7 @@ const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     setModalOpen(true);
     setModalType(modal);
     if (document.body) {
-      window.scrollTo({ top: 0 });
+      window.scrollTo({ top: 0, left: 0 });
       document.body.classList.add("overflow-hidden");
       document.body.classList.add("h-full");
     }
