@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ExpensesContext } from "../../context/expenses-context";
 import Container from "../ui/Container";
 import EditModeButton from "../ui/EditModeButton";
-import AddExpenseButton from "../ui/AddExpenseButton";
+import AddExpenseButton from "./AddExpenseButton";
 import DeleteSelectedButton from "../ui/DeleteSelectedButton";
 import { Reorder } from "framer-motion";
 import ExpenseItem from "./ExpenseItem";
