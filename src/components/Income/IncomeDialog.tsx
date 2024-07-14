@@ -36,14 +36,16 @@ export default function IncomeDialog() {
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="bottom-0 left-1/2 -translate-x-1/2 -translate-y-0 rounded-t-xl md:bottom-auto md:top-1/4">
-        <DialogHeader>
-          <DialogTitle>Adjust Income</DialogTitle>
-        </DialogHeader>
-        <DialogDescription>
-          Add your monthly income to calculate your budget.
-        </DialogDescription>
-        <IncomeForm />
+      <DialogContent className="left-1/2 top-0 h-screen -translate-x-1/2 -translate-y-0 md:bottom-auto md:top-1/4">
+        <div className="relative top-24 flex flex-col space-y-5">
+          <DialogHeader className="text-left">
+            <DialogTitle>Adjust Income</DialogTitle>
+          </DialogHeader>
+          <DialogDescription>
+            Add your monthly income to calculate your budget.
+          </DialogDescription>
+          <IncomeForm />
+        </div>
       </DialogContent>
     </Dialog>
   );

@@ -18,15 +18,17 @@ export default function ExpenseDialog() {
           <BiPlus />
         </Button>
       </DialogTrigger>
-      <DialogContent className="bottom-0 left-1/2 -translate-x-1/2 -translate-y-0 rounded-t-xl md:bottom-auto md:top-1/4">
-        <DialogHeader>
-          <DialogTitle>Add Expense</DialogTitle>
-        </DialogHeader>
-        <DialogDescription>
-          Add one of your monthly expenses and give it a name, category, and
-          dollar amount.
-        </DialogDescription>
-        <ExpenseForm />
+      <DialogContent className="left-1/2 top-0 h-screen -translate-x-1/2 -translate-y-0 md:bottom-auto md:top-1/4">
+        <div className="relative top-24 flex flex-col space-y-5">
+          <DialogHeader className="text-left">
+            <DialogTitle>Add Expense</DialogTitle>
+          </DialogHeader>
+          <DialogDescription>
+            Add one of your monthly expenses and give it a name, category, and
+            dollar amount.
+          </DialogDescription>
+          <ExpenseForm />
+        </div>
       </DialogContent>
     </Dialog>
   );
