@@ -58,8 +58,9 @@ export default function ExpenseTable() {
                     {exp.name}
                   </TableCell>
                   <TableCell>
-                    {exp.category.charAt(0).toUpperCase() +
-                      exp.category.slice(1)}
+                    {exp.category &&
+                      exp.category.charAt(0).toUpperCase() +
+                        exp.category.slice(1)}
                   </TableCell>
                   <TableCell className="text-right">
                     ${exp.amount?.toFixed(2)}

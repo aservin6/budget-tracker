@@ -30,7 +30,7 @@ export default function BreakdownChart() {
   }, [expenses]);
 
   const chartLabels = chartData.map((obj) => {
-    if (obj)
+    if (obj && obj.category)
       return obj.category.charAt(0).toUpperCase() + obj.category.slice(1);
   });
 
