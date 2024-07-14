@@ -36,8 +36,8 @@ export default function IncomeDialog() {
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="left-1/2 top-0 h-screen -translate-x-1/2 -translate-y-0 md:bottom-auto md:top-1/4">
-        <div className="relative top-24 flex flex-col space-y-5">
+      <DialogContent className="h-screen max-w-full sm:h-auto sm:max-w-lg">
+        <div className="relative top-12 flex max-w-lg flex-col space-y-5 sm:top-0 sm:block">
           <DialogHeader className="text-left">
             <DialogTitle>Adjust Income</DialogTitle>
           </DialogHeader>
