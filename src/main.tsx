@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import ExpensesProvider from "./context/expenses-context.tsx";
-import ModalProvider from "./context/modal-context.tsx";
+import { ThemeProvider } from "./context/theme-context.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ModalProvider>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <ExpensesProvider>
         <App />
       </ExpensesProvider>
-    </ModalProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 );

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ExpensesContext } from "../../context/expenses-context";
+import { Button } from "./button";
 
 export default function DeleteSelectedButton() {
   const { deleteSelectedExpenses, selectedExpenses, toggleEditMode } =
@@ -13,19 +14,22 @@ export default function DeleteSelectedButton() {
   return (
     <>
       {selectedExpenses > 0 ? (
-        <button
+        <Button
           onClick={handleClick}
-          className={`border-1 active: rounded-md border border-red-500 bg-zinc-800 px-2 py-1 text-sm font-semibold text-red-500        `}
+          variant={"outline"}
+          className="border-destructive text-destructive hover:bg-destructive"
+          aria-label="delete selected expenses"
         >
           Delete Selected ({selectedExpenses ? selectedExpenses : 0})
-        </button>
+        </Button>
       ) : (
-        <button
-          className={`rounded-md bg-zinc-800 px-2 py-1 text-sm font-semibold text-red-500 opacity-50 outline outline-1 outline-red-500`}
+        <Button
+          variant={"outline"}
+          className="border-destructive text-destructive"
           disabled
         >
           Delete Selected ({selectedExpenses ? selectedExpenses : 0})
-        </button>
+        </Button>
       )}
     </>
   );

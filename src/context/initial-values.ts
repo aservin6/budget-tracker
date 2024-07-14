@@ -5,14 +5,12 @@ export const expensesInitialValues = {
   toggleSelectExpense: () => {},
   resetSelectedExpenses: () => {},
   deleteSelectedExpenses: () => {},
-  reorderExpenses: () => {},
   selectedExpenses: 0,
   totalCostOfExpenses: 0,
   editMode: false,
   toggleEditMode: () => {},
   userIncome: 0,
   saveIncome: () => {},
-  saveColor: () => {},
 };
 
 export const modalIntialValues = {

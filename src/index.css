@@ -2,6 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: 219 13% 95%;
+  --foreground: 219 5% 10%;
+  --card: 219 13% 90%;
+  --card-foreground: 219 5% 15%;
+  --popover: 219 13% 95%;
+  --popover-foreground: 219 95% 10%;
+  --primary: 219 64% 73%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 219 13% 70%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 181 13% 85%;
+  --muted-foreground: 219 5% 35%;
+  --accent: 181 13% 80%;
+  --accent-foreground: 219 5% 15%;
+  --destructive: 0 50% 30%;
+  --destructive-foreground: 219 5% 90%;
+  --border: 219 20% 50%;
+  --input: 219 20% 25%;
+  --ring: 219 64% 73%;
+  --radius: 0.5rem;
+}
+.dark {
+  --background: 219 13% 10%;
+  --foreground: 219 5% 90%;
+  --card: 219 13% 10%;
+  --card-foreground: 219 5% 90%;
+  --popover: 219 13% 5%;
+  --popover-foreground: 219 5% 90%;
+  --primary: 219 64% 73%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 219 13% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 181 13% 25%;
+  --muted-foreground: 219 5% 60%;
+  --accent: 181 13% 25%;
+  --accent-foreground: 219 5% 90%;
+  --destructive: 0 50% 30%;
+  --destructive-foreground: 219 5% 90%;
+  --border: 219 20% 25%;
+  --input: 219 20% 25%;
+  --ring: 219 64% 73%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
 body {
-  background-color: #e4e4e7;
+  font-family: "Figtree Variable", sans-serif;
 }

@@ -1,38 +1,25 @@
-import Container from "../ui/Container";
 import { useContext } from "react";
 import { ExpensesContext } from "../../context/expenses-context";
-import AdjustIncomeButton from "./AdjustIncomeButton";
-import IncomeBreakdown from "./IncomeBreakdown";
-import ExpenseChart from "../Chart/ExpenseChart";
+import IncomeDialog from "./IncomeDialog";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import IncomeChart from "./IncomeChart";
 
 export default function Income() {
-  const { userIncome, expenses } = useContext(ExpensesContext);
+  const { userIncome } = useContext(ExpensesContext);
 
   return (
-    <Container>
-      {userIncome ? (
-        <>
-          <div className="mb-6 flex items-center justify-between">
-            <header className="text-xl font-extrabold text-zinc-200">
-              Net Income
-            </header>
-            <AdjustIncomeButton />
-          </div>
-          <div className="flex flex-col space-y-3 md:flex-row md:justify-between md:space-y-0">
-            <IncomeBreakdown />
-            {expenses.length > 0 && (
-              <div className="self-center p-3">
-                <ExpenseChart />
-              </div>
-            )}
-          </div>
-        </>
-      ) : (
-        <div className="flex items-center justify-between space-x-2">
-          <p className="">Add your monthly income to calculate your budget!</p>
-          <AdjustIncomeButton />
-        </div>
-      )}
-    </Container>
+    <>
+      {userIncome && userIncome > 0 ? (
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle>Income</CardTitle>
+            <IncomeDialog />
+          </CardHeader>
+          <CardContent className="flex items-center justify-center">
+            <IncomeChart />
+          </CardContent>
+        </Card>
+      ) : null}
+    </>
   );
 }

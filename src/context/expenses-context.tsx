@@ -9,14 +9,12 @@ interface ExpensesContext {
   toggleSelectExpense: (expense: Expense) => void;
   resetSelectedExpenses: () => void;
   deleteSelectedExpenses: () => void;
-  reorderExpenses: (newOrder: ExpenseList) => void;
   selectedExpenses: number;
   totalCostOfExpenses: number;
   editMode: boolean;
   toggleEditMode: () => void;
   userIncome: number | null;
   saveIncome: (input: number | null) => void;
-  saveColor: (expense: Expense, value: string) => void;
 }
 
 export const ExpensesContext = createContext<ExpensesContext>(
@@ -61,10 +59,6 @@ const ExpensesProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     localStorage.setItem("expenses", JSON.stringify(arr));
   };
 
-  const reorderExpenses = (newOrder: ExpenseList) => {
-    setExpenses(newOrder);
-  };
-
   const saveIncome = (input: number | null) => {
     setUserIncome(input);
     localStorage.setItem("userIncome", JSON.stringify(input));
@@ -89,18 +83,6 @@ const ExpensesProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     }, 0);
     return count;
   }, [expenses]);
-
-  const saveColor = (expense: Expense, value: string) => {
-    const arr = expenses.map((obj) => {
-      if (obj.id === expense.id) {
-        return { ...obj, color: value };
-      } else {
-        return obj;
-      }
-    });
-    setExpenses(arr);
-    localStorage.setItem("expenses", JSON.stringify(arr));
-  };
 
   // Retrieve local storage
   useEffect(() => {
@@ -127,14 +109,12 @@ const ExpensesProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         toggleSelectExpense,
         resetSelectedExpenses,
         deleteSelectedExpenses,
-        reorderExpenses,
         selectedExpenses,
         totalCostOfExpenses,
         editMode,
         toggleEditMode,
         userIncome,
         saveIncome,
-        saveColor,
       }}
     >
       {children}
